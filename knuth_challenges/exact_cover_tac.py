@@ -11,20 +11,19 @@ class ExactCoverManifold:
         self.state = s0
         
     def get_gradient(self, s):
-        # F[s] = sum_j ( sum_i A_ij * s_i - 1 )^2 + Soft-spin penalty
-        # dF/ds_k = sum_j 2 * (sum_i A_ij * s_i - 1) * A_kj
+        # Normalize by num_elements to keep gradient scale stable
+        num_elements = self.A.shape[1]
         
-        # Current coverage per element
         coverage = np.dot(s, self.A) 
         diff = coverage - 1.0
         
-        # Gradient from coverage constraint
-        grad = 2.0 * np.dot(self.A, diff)
+        # Gradient from coverage constraint (normalized)
+        grad = 2.0 * np.dot(self.A, diff) / num_elements
         
-        # Soft-spin penalty Grad( s^2 (s-1)^2 ) to force s_i toward 0 or 1
+        # Soft-spin penalty: forcing toward 0 or 1
         penalty = 2.0 * s * (s - 1.0) * (2.0 * s - 1.0)
         
-        return grad + 5.0 * penalty
+        return grad + 0.1 * penalty
 
 class ExactCoverChallenge:
     """
