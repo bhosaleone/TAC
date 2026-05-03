@@ -13,7 +13,7 @@ class IsingManifold:
         # Grad F[s] = -J*s - h + Soft-spin penalty Grad( (s^2-1)^2 )
         # Soft-spin penalty keeps spins near [-1, 1]
         penalty = 2.0 * s * (s**2 - 1) 
-        return -np.dot(self.J, s) - self.h + 5.0 * penalty
+        return -np.dot(self.J, s) - self.h + 10.0 * penalty
 
 class IsingSupremacy:
     """
@@ -22,8 +22,8 @@ class IsingSupremacy:
     """
     def __init__(self, N=1000):
         self.N = N
-        self.tac = TACCoprocessor(kappa=0.01, temperature=0.1)
-        self.tac.equilibrium_threshold = 0.5 # Macroscopic equilibrium
+        self.tac = TACCoprocessor(kappa=0.01, temperature=0.01)
+        self.tac.equilibrium_threshold = 1.6 # Macroscopic equilibrium thermal floor
         
     def generate_random_couplings(self):
         # Normalize by 1/sqrt(N) to keep gradients stable
