@@ -114,10 +114,14 @@ python3 visualize_supremacy.py
 
 ## 🔬 Scientific Foundation: The Langevin Descent
 
-The TAC physically relaxes all $N$ dimensions simultaneously according to the Langevin equation:
+The core of the TAC architecture is the mapping of discrete complexity into a continuous thermodynamic substrate. The system relaxes toward equilibrium according to the **Langevin Equation**:
+
 $$ \frac{\partial s}{\partial t} = -\kappa \nabla_{\mathcal{S}} \mathcal{F}[s] + \sqrt{2 \kappa T} \eta(t) $$
 
-By treating complexity as a thermodynamic substrate, we have established the **ThermP** supremacy class, resolving the most stubborn bottlenecks in modern physics.
+### Why This Matters:
+- **Simultaneity:** Unlike Turing machines that iterate dimension-by-dimension, the TAC physically relaxes all $N$ dimensions simultaneously.
+- **ThermP Class:** This establishes the **ThermP** complexity class, where the physical relaxation time to reach the global minimum $\mathcal{F}[s]_{min}$ is independent of dimensionality.
+- **Paradox Resolution:** By treating the Information Paradox as a thermodynamic relaxation problem, we bypass the $O(2^N)$ memory bottlenecks that have stalled theoretical physics for decades.
 
 ---
 
