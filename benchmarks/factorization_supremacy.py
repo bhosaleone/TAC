@@ -10,20 +10,15 @@ class FactorizationManifold:
         
     def get_gradient(self, s):
         p, q = s
-        # F[s] = (p*q - n)^2
-        # dF/dp = 2*(p*q - n)*q
-        # dF/dq = 2*(p*q - n)*p
+        # Log-space: F[s] = (log(p) + log(q) - log(n))^2
+        # dF/dp = 2*(log(p) + log(q) - log(n)) * (1/p)
+        # dF/dq = 2*(log(p) + log(q) - log(n)) * (1/q)
         
-        diff = p * q - self.n
-        grad_p = 2.0 * diff * q
-        grad_q = 2.0 * diff * p
+        diff = np.log(max(p, 1.1)) + np.log(max(q, 1.1)) - np.log(self.n)
+        grad_p = 2.0 * diff / p
+        grad_q = 2.0 * diff / q
         
-        # Add a constraint to keep p, q positive and distinct
-        # Penalty for p or q < 2
-        p_penalty = -100.0 / (p - 1.0) if p > 1.1 else 1000.0
-        q_penalty = -100.0 / (q - 1.0) if q > 1.1 else 1000.0
-        
-        return np.array([grad_p + p_penalty, grad_q + q_penalty])
+        return np.array([grad_p, grad_q])
 
 class FactorizationSupremacy:
     """
@@ -34,8 +29,8 @@ class FactorizationSupremacy:
         self.n = p_true * q_true
         self.p_true = p_true
         self.q_true = q_true
-        self.tac = TACCoprocessor(kappa=1e-6, temperature=0.01)
-        self.tac.equilibrium_threshold = 1.0 # High threshold for numeric stability
+        self.tac = TACCoprocessor(kappa=0.5, temperature=0.0)
+        self.tac.equilibrium_threshold = 1e-6
         
     def run_test(self):
         # Initial guess (square root area)
