@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this research or software, please cite it as below."
+authors:
+  - family-names: Bhosale
+    given-names: Shrikant
+  - family-names: Pandit
+    given-names: Atmabhan
+title: "Turing-TAC Coupler: Resolving the Black Hole Information Paradox via Thermodynamic Relaxation"
+version: 1.0.0
+date-released: 2026-05-03
+url: "https://github.com/bhosaleone/TAC"
+repository-code: "https://github.com/bhosaleone/TAC"
+keywords:
+  - Black Holes
+  - Information Paradox
+  - Thermodynamic Computing
+  - Langevin Dynamics
+  - S5 Symmetry
+  - Quantum Supremacy

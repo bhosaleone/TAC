@@ -1,9 +1,30 @@
+<p align="center">
+  <img src="visual_artifacts/hero_banner.png" alt="Turing-TAC Hero Banner" width="100%">
+</p>
+
 # Turing-TAC Coupler: The Bhosale-Pandit Paradigm
 ### Resolving the Information Paradox & Deriving Universal Constants from First Principles
 
 **"The Information Age is Over. The Thermodynamic Age has begun."**
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.001-B31B1B.svg)](PUBLICATION_DRAFT.md)
+[![Manifesto](https://img.shields.io/badge/Manifesto-Thermodynamic%20Age-orange.svg)](MANIFESTO.md)
+[![Citation](https://img.shields.io/badge/Citation-CFF-blue.svg)](CITATION.cff)
+
 Welcome to the central research repository for the **Turing-TAC Coupled Architecture**. This codebase formalizes a transition from sequential Turing-based computation to continuous thermodynamic relaxation. We demonstrate $O(1)$ and $O(N)$ supremacy over traditional quantum and classical architectures on consumer-grade hardware (the "Potato Rig").
+
+## 🖼️ Gallery: Empirical Proof of Supremacy
+
+<p align="center">
+  <img src="visual_artifacts/supremacy_memory_bypass.png" width="45%" alt="Quantum Memory Wall">
+  <img src="visual_artifacts/supremacy_complexity_scaling.png" width="45%" alt="Turing Complexity Wall">
+</p>
+
+> **Left:** The "Quantum Memory Cliff" at 29 qubits vs the O(N) linear scaling of the 5D TAC Crystal.  
+> **Right:** The O(1) Supremacy Plateau demonstrating constant relaxation time across increasing spatial resolutions.
+
+---
 
 ## 🌌 Core Research Domains
 
