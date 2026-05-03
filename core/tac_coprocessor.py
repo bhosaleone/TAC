@@ -52,8 +52,13 @@ class TACCoprocessor:
             steps += 1
             
             # Continuous systems never reach absolute zero gradient, they reach thermal equilibrium
-            # We break when the deterministic gradient is below the macroscopic threshold
-            if np.linalg.norm(gradient) < self.equilibrium_threshold:
+            # We break when the normalized gradient is below the macroscopic threshold
+            norm_grad = np.linalg.norm(gradient) / np.sqrt(len(state))
+            
+            if steps % 100 == 0:
+                print(f"   [TAC Step {steps}] Normalized Grad Norm: {norm_grad:.6f}")
+
+            if norm_grad < self.equilibrium_threshold or steps > 1000:
                 break
                 
         # Simulate O(1) metric for reporting. The Turing Machine observes the TAC 
