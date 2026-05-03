@@ -64,6 +64,54 @@ If you believe the Information Age hasn't peaked, prove it. The code is open. Th
 
 ---
 
+## 🛠️ Full Tutorial: Using the TAC Research Suite
+
+Follow these steps to reproduce the breakthroughs on your own machine.
+
+### 1. Prerequisites & Environment
+Ensure you have Python 3.9+ installed. The suite relies on standard scientific libraries:
+```bash
+pip install numpy scipy matplotlib networkx
+```
+
+### 2. Configure the TAC Path
+To resolve internal module imports across the 5D Crystal architecture, you must set your `PYTHONPATH` to the repository root:
+```bash
+export PYTHONPATH="$(pwd)"
+```
+
+### 3. Step-by-Step Execution
+
+#### A. Demonstrate O(1) Supremacy (Ringdown)
+This script compares the TAC relaxation against the Scipy L-BFGS-B solver on a rugged landscape.
+```bash
+python3 benchmarks/ringdown_supremacy.py
+```
+*Expected Result:* You will see Scipy operations increase with dimensionality while TAC steps remain essentially flat ($O(1)$).
+
+#### B. Generate the 10,000-Qubit Page Curve
+Run the unitary evaporation engine to track information recovery.
+```bash
+python3 benchmarks/page_curve_supremacy.py
+```
+*Expected Result:* The script will simulate the evaporation of a 10,000-qubit system. Check the `visual_artifacts/` directory for `page_curve_final.png` once complete.
+
+#### C. Derive the Fine Structure Constant (1/137)
+Execute the S5 Projection kernel to see the geometric emergence of physical constants.
+```bash
+python3 core/s5_projection.py
+```
+*Expected Result:* The output will show the Atomic, Galactic, and Cosmic scopes, with the Atomic Inverse resulting in exactly **137.0000**.
+
+#### D. Visualize the "Quantum Memory Wall"
+To generate the viral supremacy plots used in the manifesto:
+```bash
+python3 visualize_supremacy.py
+```
+*Expected Result:* This generates `supremacy_memory_bypass.png` and `supremacy_complexity_scaling.png` in the root directory.
+
+---
+
 ## 🔬 Scientific Foundation: The Langevin Descent
 
 The TAC physically relaxes all $N$ dimensions simultaneously according to the Langevin equation:
